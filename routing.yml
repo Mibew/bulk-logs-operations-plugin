@@ -1,0 +1,14 @@
+# route for logs export
+mibew_bulk_logs_export:
+    path: /operator/history/bulk_export
+    defaults:
+        _controller: Mibew\Mibew\Plugin\BulkLogsOperations\Controller\Controller::exportAction
+        _access_check: Mibew\AccessControl\Check\PermissionsCheck
+        _access_permissions: [CAN_ADMINISTRATE]
+# route for logs deletion
+mibew_bulk_logs_delete:
+    path: /operator/history/bulk_delete
+    defaults:
+        _controller: Mibew\Mibew\Plugin\BulkLogsOperations\Controller\Controller::deleteAction
+        _access_check: Mibew\AccessControl\Check\PermissionsCheck
+        _access_permissions: [CAN_ADMINISTRATE]
