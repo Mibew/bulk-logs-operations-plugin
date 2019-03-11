@@ -40,7 +40,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
         if (array_key_exists(SESSION_PREFIX . 'operator', $_SESSION)
             && is_capable(CAN_ADMINISTRATE, operator_by_id($_SESSION[SESSION_PREFIX . 'operator']['operatorid']))) {
             if (!strcmp('/operator/history', $args['request']->getPathInfo())) {
-                $args['js'][] = $this->getFilesPath() . '/js/alter_form.js';
+                $args['js'][] = str_replace(DIRECTORY_SEPARATOR, '/', $this->getFilesPath()) . '/js/alter_form.js';
             }
         }
     }
